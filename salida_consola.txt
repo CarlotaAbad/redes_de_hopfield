@@ -1,0 +1,78 @@
+MNIST leído de la carpeta mnist/
+Subconjunto: (100, 784) | imágenes por dígito: [10 10 10 10 10 10 10 10 10 10]
+Train: 70 por dígito [7 7 7 7 7 7 7 7 7 7]
+Test:  30 por dígito [3 3 3 3 3 3 3 3 3 3]
+
+W es simétrica: True | diagonal a cero: True
+Patrones guardados que son estables: 0 de 70
+Al actualizar un patrón guardado cambian de media 99.7 píxeles
+
+--- Clasificación con Hebb, sin ruido ---
+sincrona: accuracy = 0.10, estados finales distintos = 1
+[[0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]]
+asincrona: accuracy = 0.10, estados finales distintos = 1
+[[0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]]
+
+Energía asíncrona: -5992.7 -> -15032.7 en 3 barridos (¿sube alguna vez? False)
+Energía síncrona:  -5992.7 -> -15032.7 (converge, 4 pasos)
+
+Estado final común: {'pixeles_trazo': 0.025510204081632654, 'hamming_a_media': 7, 'hamming_a_mas_cercano': 34, 'digito_mas_cercano': 1, 'energia': -15032.721938775492, 'energia_media_patrones': -11870.161880466458}
+Solapamiento medio: MNIST 0.65 | aleatorios 0.03
+
+--- Capacidad (porcentaje de patrones que siguen estables) ---
+P =   1: aleatorios 1.00 | MNIST 1.00
+P =   2: aleatorios 1.00 | MNIST 1.00
+P =   3: aleatorios 1.00 | MNIST 0.00
+P =   4: aleatorios 1.00 | MNIST 0.00
+P =   5: aleatorios 1.00 | MNIST 0.00
+P =  10: aleatorios 1.00 | MNIST 0.00
+P =  20: aleatorios 1.00 | MNIST 0.00
+P =  30: aleatorios 1.00 | MNIST 0.00
+P =  40: aleatorios 1.00 | MNIST 0.00
+P =  50: aleatorios 0.99 | MNIST 0.00
+P =  60: aleatorios 0.93 | MNIST 0.00
+P =  70: aleatorios 0.74 | MNIST 0.00
+P =  80: aleatorios 0.58
+P =  90: aleatorios 0.37
+P = 100: aleatorios 0.21
+P = 110: aleatorios 0.08
+P = 120: aleatorios 0.03
+P = 140: aleatorios 0.00
+
+Regla de proyección: 70/70 estables, accuracy = 0.40
+[[2 0 0 0 0 0 1 0 0 0]
+ [0 3 0 0 0 0 0 0 0 0]
+ [1 0 2 0 0 0 0 0 0 0]
+ [1 1 0 0 0 1 0 0 0 0]
+ [0 1 0 0 1 0 0 0 0 1]
+ [0 0 0 1 0 1 0 0 1 0]
+ [0 1 0 0 0 0 1 0 1 0]
+ [0 1 0 0 1 0 0 1 0 0]
+ [0 1 0 0 0 1 0 0 0 1]
+ [0 0 0 0 2 0 0 0 0 1]]
+
+--- Accuracy con ruido (media de 5 repeticiones) ---
+ruido 0%: Hebb: 0.10 | Proyección: 0.40 | Sin red (comparar directamente): 0.60
+ruido 5%: Hebb: 0.10 | Proyección: 0.43 | Sin red (comparar directamente): 0.57
+ruido 10%: Hebb: 0.10 | Proyección: 0.45 | Sin red (comparar directamente): 0.58
+ruido 20%: Hebb: 0.10 | Proyección: 0.43 | Sin red (comparar directamente): 0.55
+
+Listo: figuras en la carpeta 'figuras' y números en resultados.json
